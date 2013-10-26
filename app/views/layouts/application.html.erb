@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Desaf&iacute;o Turing </title>
+	<link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+	<%= stylesheet_link_tag "style"%>
+	<% if @current_action == 'interpreter'%>
+		<%= javascript_include_tag "jquery.min" %>
+		<%= javascript_include_tag "campusbf" %>
+	<% end %>
+	<link rel="shortcut icon" href="favicon.ico" />
+</head>
+<body>
+<div class="shell">
+  <div class="border">
+    <div id="header">
+      <h1 id="logo"><a href="#" class="notext">Desaf&iacute;o Turing</a></h1>
+      <div class="socials right">
+        <ul>
+          <li><a href="https://www.facebook.com/events/523200497691758/?fref=ts" target="_blank" class="fb">Facebook</a></li>
+          <li class="last"><a href="https://twitter.com/DesafioTuring" target="_blank" class="twit">Twitter</a></li>
+        </ul>
+      </div>
+      <div class="cl">&nbsp;</div>
+    </div>
+    <div id="navigation">
+      <ul>
+        <li><%= section_link('Inicio', 			:controller=>'home', 	:action=>'index') %> </li>
+        <li><%= section_link('Instrucciones', 	:controller=>'home', 	:action=>'instructions') %> </li>
+        <li><%= section_link('Ejemplos', 		:controller=>'home', 	:action=>'examples') %> </li>
+        <li><%= section_link('Retos', 		    :controller=>'home', 	:action=>'challenges') %> </li>
+        <li><%= section_link('Interprete', 		:controller=>'home', 	:action=>'interpreter') %> </li>
+        <li><%= section_link('Calificación', 	:controller=>'home', 	:action=>'score') %> </li>
+        <li><%= section_link('Solución', 		:controller=>'home', 	:action=>'solution') %> </li>
+        <li><%= section_link('Nosotros', 		:controller=>'home', 	:action=>'about') %> </li>
+      </ul>
+      <div class="cl">&nbsp;</div>
+    </div>
+    <div id="main">
+		<div id="content" class="left">
+			<%= yield %>	
+		</div>
+		<div clas="cl">&nbsp;</div>
+  </div>
+  <div class="shadow-l"></div>
+  <div class="shadow-r"></div>
+  <div class="shadow-b"></div>
+  </div>
+  <div id="footer">
+    <div class="left">
+    	<b>Creditos:</b>
+    	<ul>
+			<li>Manuel Cer&oacute;n</li>
+			<li>John.Talent</li>
+			<li>Gabriel Neira</li>
+		</ul>
+    </div>
+    
+    <p class="right">
+    	<b><a href="http://fundacionaturing.org/">Fundaci&oacute;n Alan Turing</b></a>
+		<br />
+		Para la ciencia y la tecnología.
+		<br />
+		<br />
+		Desaf&iacute;o realizado en el marco de la conmemoraci&oacute;n de los 100 a&ntilde;os de Alan Turing.	
+	</p>
+    	<div class="cl"></div>
+  </div>
+
+</body>
+</html>
